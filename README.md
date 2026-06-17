@@ -146,14 +146,10 @@ is running.
 
 ## Features
 
-- [ ] Create folders and subfolders
-- [ ] Create files within folders
-- [ ] Browse a folder's contents (subfolders + files)
-- [ ] Exact-name search (within a folder / globally)
-- [ ] "Starts with" autocomplete (top 10 results)
-- [ ] Delete folders (cascades to all contents)
-- [ ] Delete files
-
-## Notes / assumptions
-
-TODO: document any assumptions or trade-offs made during implementation.
+- Create folders and subfolders
+- Create files within folders
+- Browse a folder's contents (subfolders + files)
+- Exact-name search (within a folder / globally)
+- "Starts with" autocomplete (top 10 results)
+- Delete folders (cascades to all contents)
+- Delete files
