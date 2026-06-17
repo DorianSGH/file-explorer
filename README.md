@@ -28,10 +28,13 @@ with FastAPI, React, and PostgreSQL, running in Docker.
 │   ├── app/
 │   │   ├── main.py                # FastAPI app, CORS, lifespan, routers
 │   │   ├── config.py              # Pydantic settings (DATABASE_URL etc.)
-│   │   ├── database.py            # SQLAlchemy engine / session / get_db
 │   │   ├── models.py              # Folder and File ORM models
 │   │   ├── schemas.py             # Pydantic request/response schemas
 │   │   ├── crud.py                # Database query functions
+│   │   ├── database.py            # SQLAlchemy engine / session / get_db
+|   |   ├──repositories/
+|   |   |   ├── files_repo.py      # create / delete / search files
+|   |   |   ├── folders_repo.py    # create / delete folders
 │   │   └── routers/
 │   │       ├── folders.py         # browse / create / delete folders
 │   │       ├── files.py           # create / delete files
@@ -39,7 +42,8 @@ with FastAPI, React, and PostgreSQL, running in Docker.
 │   └── tests/
 │       ├── conftest.py            # test DB, client fixture
 │       ├── test_health.py
-│       └── test_nodes.py
+│       ├── test_files.py
+│       └── test_folders.py
 └── frontend/
     ├── Dockerfile
     ├── package.json
