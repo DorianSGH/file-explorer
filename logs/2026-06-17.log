@@ -1,0 +1,136 @@
+2026-06-17 10:33:02,032 - INFO - app.main - Starting up File Explorer API
+2026-06-17 10:33:02,673 - INFO - app.routers.folders_router - Browsed folder parent_id=None, subfolders=1 files=2
+2026-06-17 10:33:02,677 - INFO - app.routers.folders_router - Browsed folder parent_id=None, subfolders=1 files=2
+2026-06-17 10:42:57,347 - INFO - app.routers.folders_router - Created folder id=13 name='new folder' parent_id=None
+2026-06-17 10:42:57,355 - INFO - app.routers.folders_router - Browsed folder parent_id=None, subfolders=2 files=2
+2026-06-17 10:43:04,491 - INFO - app.routers.folders_router - Browsed folder parent_id=13, subfolders=0 files=0
+2026-06-17 10:43:06,676 - INFO - app.routers.folders_router - Browsed folder parent_id=None, subfolders=2 files=2
+2026-06-17 10:43:06,681 - INFO - app.routers.folders_router - Browsed folder parent_id=None, subfolders=2 files=2
+2026-06-17 10:43:08,429 - INFO - app.routers.folders_router - Browsed folder parent_id=1, subfolders=2 files=0
+2026-06-17 10:43:09,695 - INFO - app.routers.folders_router - Browsed folder parent_id=None, subfolders=2 files=2
+2026-06-17 10:43:15,349 - INFO - app.routers.folders_router - Browsed folder parent_id=13, subfolders=0 files=0
+2026-06-17 10:43:22,594 - INFO - app.routers.folders_router - Created folder id=14 name='new file' parent_id=13
+2026-06-17 10:43:22,603 - INFO - app.routers.folders_router - Browsed folder parent_id=13, subfolders=1 files=0
+2026-06-17 10:43:25,870 - INFO - app.routers.folders_router - Deleted folder id=14
+2026-06-17 10:43:25,878 - INFO - app.routers.folders_router - Browsed folder parent_id=13, subfolders=0 files=0
+2026-06-17 10:43:36,571 - INFO - app.routers.folders_router - Created folder id=15 name='first folder in new folder' parent_id=13
+2026-06-17 10:43:36,579 - INFO - app.routers.folders_router - Browsed folder parent_id=13, subfolders=1 files=0
+2026-06-17 10:43:46,406 - INFO - app.routers.files_router - Created file id=4 name='first file in new folder' folder_id=13
+2026-06-17 10:43:46,414 - INFO - app.routers.folders_router - Browsed folder parent_id=13, subfolders=1 files=1
+2026-06-17 10:43:50,502 - INFO - app.routers.files_router - Created file id=5 name='second file in new folder' folder_id=13
+2026-06-17 10:43:50,510 - INFO - app.routers.folders_router - Browsed folder parent_id=13, subfolders=1 files=2
+2026-06-17 10:43:51,531 - INFO - app.routers.folders_router - Browsed folder parent_id=None, subfolders=2 files=2
+2026-06-17 10:43:54,184 - INFO - app.routers.files_router - Deleted file id=1
+2026-06-17 10:43:54,190 - INFO - app.routers.folders_router - Browsed folder parent_id=None, subfolders=2 files=1
+2026-06-17 10:43:57,738 - INFO - app.routers.files_router - Deleted file id=3
+2026-06-17 10:43:57,745 - INFO - app.routers.folders_router - Browsed folder parent_id=None, subfolders=2 files=0
+2026-06-17 10:59:06,422 - INFO - app.routers.files_router - Created file id=6 name='file in root' folder_id=None
+2026-06-17 10:59:06,434 - INFO - app.routers.folders_router - Browsed folder parent_id=None, subfolders=2 files=1
+2026-06-17 10:59:11,924 - INFO - app.routers.files_router - Created file id=7 name='second file in root' folder_id=None
+2026-06-17 10:59:11,931 - INFO - app.routers.folders_router - Browsed folder parent_id=None, subfolders=2 files=2
+2026-06-17 11:01:44,143 - INFO - app.routers.folders_router - Browsed folder parent_id=1, subfolders=2 files=0
+2026-06-17 11:01:48,261 - INFO - app.routers.folders_router - Browsed folder parent_id=None, subfolders=2 files=2
+2026-06-17 11:01:48,267 - INFO - app.routers.folders_router - Browsed folder parent_id=None, subfolders=2 files=2
+2026-06-17 11:01:56,526 - INFO - app.routers.folders_router - Browsed folder parent_id=13, subfolders=1 files=2
+2026-06-17 11:02:00,283 - INFO - app.routers.folders_router - Browsed folder parent_id=None, subfolders=2 files=2
+2026-06-17 11:02:03,568 - INFO - app.routers.folders_router - Browsed folder parent_id=1, subfolders=2 files=0
+2026-06-17 11:02:10,521 - INFO - app.routers.folders_router - Created folder id=16 name='new folder' parent_id=1
+2026-06-17 11:02:10,528 - INFO - app.routers.folders_router - Browsed folder parent_id=1, subfolders=3 files=0
+2026-06-17 11:02:15,038 - INFO - app.routers.folders_router - Browsed folder parent_id=None, subfolders=2 files=2
+2026-06-17 11:13:59,051 - INFO - app.routers.folders_router - Browsed folder parent_id=None, subfolders=2 files=2
+2026-06-17 11:13:59,056 - INFO - app.routers.folders_router - Browsed folder parent_id=None, subfolders=2 files=2
+2026-06-17 11:14:01,723 - INFO - app.routers.folders_router - Deleted folder id=1
+2026-06-17 11:14:01,732 - INFO - app.routers.folders_router - Browsed folder parent_id=None, subfolders=1 files=2
+2026-06-17 11:14:27,081 - INFO - app.main - Starting up File Explorer API
+2026-06-17 11:14:30,239 - INFO - app.routers.folders_router - Browsed folder parent_id=None, subfolders=1 files=2
+2026-06-17 11:14:30,245 - INFO - app.routers.folders_router - Browsed folder parent_id=None, subfolders=1 files=2
+2026-06-17 13:19:06,798 - INFO - app.routers.folders_router - Deleted folder id=13
+2026-06-17 13:19:06,809 - INFO - app.routers.folders_router - Browsed folder parent_id=None, subfolders=0 files=2
+2026-06-17 13:19:08,591 - INFO - app.routers.files_router - Deleted file id=6
+2026-06-17 13:19:08,595 - INFO - app.routers.folders_router - Browsed folder parent_id=None, subfolders=0 files=1
+2026-06-17 13:19:10,013 - INFO - app.routers.files_router - Deleted file id=7
+2026-06-17 13:19:10,018 - INFO - app.routers.folders_router - Browsed folder parent_id=None, subfolders=0 files=0
+2026-06-17 16:01:33,996 - INFO - app.main - Starting up File Explorer API
+2026-06-17 16:01:43,652 - INFO - app.routers.folders_router - Created folder id=17 name='new folder' parent_id=None
+2026-06-17 16:01:43,665 - INFO - app.routers.folders_router - Browsed folder parent_id=None, subfolders=1 files=0
+2026-06-17 16:01:44,678 - INFO - app.routers.folders_router - Browsed folder parent_id=17, subfolders=0 files=0
+2026-06-17 16:35:05,936 - INFO - app.routers.files_router - Listed all files, count=0
+2026-06-17 16:35:25,825 - WARNING - app.routers.files_router - Failed to create file: Folder 0 does not exist
+2026-06-17 16:35:34,863 - INFO - app.routers.files_router - Created file id=8 name='zz' folder_id=None
+2026-06-17 16:35:56,015 - INFO - app.routers.files_router - Listed all files, count=1
+2026-06-17 16:36:18,157 - INFO - app.routers.files_router - Deleted file id=8
+2026-06-17 16:38:02,765 - INFO - app.main - Shutting down File Explorer API
+2026-06-17 16:38:03,633 - INFO - app.main - Starting up File Explorer API
+2026-06-17 16:45:29,465 - INFO - app.routers.folders_router - Browsed folder parent_id=None, subfolders=1 files=0
+2026-06-17 16:45:29,471 - INFO - app.routers.folders_router - Browsed folder parent_id=None, subfolders=1 files=0
+2026-06-17 16:45:44,555 - INFO - app.routers.files_router - Created file id=9 name='aaa' folder_id=None
+2026-06-17 16:45:44,563 - INFO - app.routers.folders_router - Browsed folder parent_id=None, subfolders=1 files=1
+2026-06-17 16:45:45,917 - INFO - app.routers.folders_router - Browsed folder parent_id=17, subfolders=0 files=0
+2026-06-17 16:45:48,473 - INFO - app.routers.files_router - Created file id=10 name='aaaaaaaaa' folder_id=17
+2026-06-17 16:45:48,481 - INFO - app.routers.folders_router - Browsed folder parent_id=17, subfolders=0 files=1
+2026-06-17 16:45:52,809 - INFO - app.routers.folders_router - Created folder id=18 name='daadffde' parent_id=17
+2026-06-17 16:45:52,817 - INFO - app.routers.folders_router - Browsed folder parent_id=17, subfolders=1 files=1
+2026-06-17 16:45:56,832 - INFO - app.routers.folders_router - Created folder id=19 name='test' parent_id=17
+2026-06-17 16:45:56,841 - INFO - app.routers.folders_router - Browsed folder parent_id=17, subfolders=2 files=1
+2026-06-17 16:45:59,346 - INFO - app.routers.folders_router - Browsed folder parent_id=None, subfolders=1 files=1
+2026-06-17 16:46:00,258 - INFO - app.routers.folders_router - Browsed folder parent_id=17, subfolders=2 files=1
+2026-06-17 16:46:00,971 - INFO - app.routers.folders_router - Browsed folder parent_id=None, subfolders=1 files=1
+2026-06-17 16:46:02,822 - INFO - app.routers.folders_router - Browsed folder parent_id=17, subfolders=2 files=1
+2026-06-17 16:46:13,087 - INFO - app.routers.folders_router - Browsed folder parent_id=None, subfolders=1 files=1
+2026-06-17 16:46:17,427 - INFO - app.routers.folders_router - Browsed folder parent_id=17, subfolders=2 files=1
+2026-06-17 16:46:31,844 - INFO - app.routers.folders_router - Browsed folder parent_id=None, subfolders=1 files=1
+2026-06-17 16:47:04,388 - INFO - app.routers.files_router - Listed all files, count=2
+2026-06-17 16:47:38,167 - INFO - app.routers.files_router - Deleted file id=9
+2026-06-17 16:47:38,174 - INFO - app.routers.folders_router - Browsed folder parent_id=None, subfolders=1 files=0
+2026-06-17 16:47:45,973 - INFO - app.routers.folders_router - Deleted folder id=17
+2026-06-17 16:47:45,979 - INFO - app.routers.folders_router - Browsed folder parent_id=None, subfolders=0 files=0
+2026-06-17 16:47:55,244 - INFO - app.routers.folders_router - Created folder id=20 name='Folder in root' parent_id=None
+2026-06-17 16:47:55,250 - INFO - app.routers.folders_router - Browsed folder parent_id=None, subfolders=1 files=0
+2026-06-17 16:48:02,509 - INFO - app.routers.folders_router - Created folder id=21 name='Folder in root 2' parent_id=None
+2026-06-17 16:48:02,516 - INFO - app.routers.folders_router - Browsed folder parent_id=None, subfolders=2 files=0
+2026-06-17 16:48:08,179 - INFO - app.routers.folders_router - Created folder id=22 name='Folder in root 3' parent_id=None
+2026-06-17 16:48:08,186 - INFO - app.routers.folders_router - Browsed folder parent_id=None, subfolders=3 files=0
+2026-06-17 16:48:23,034 - INFO - app.routers.files_router - Created file id=11 name='File in root' folder_id=None
+2026-06-17 16:48:23,040 - INFO - app.routers.folders_router - Browsed folder parent_id=None, subfolders=3 files=1
+2026-06-17 16:48:28,121 - INFO - app.routers.files_router - Created file id=12 name='File in root 2' folder_id=None
+2026-06-17 16:48:28,127 - INFO - app.routers.folders_router - Browsed folder parent_id=None, subfolders=3 files=2
+2026-06-17 16:48:28,864 - INFO - app.routers.folders_router - Browsed folder parent_id=20, subfolders=0 files=0
+2026-06-17 16:48:36,346 - INFO - app.routers.files_router - Created file id=13 name='File in first folder' folder_id=20
+2026-06-17 16:48:36,354 - INFO - app.routers.folders_router - Browsed folder parent_id=20, subfolders=0 files=1
+2026-06-17 16:48:42,758 - INFO - app.routers.folders_router - Created folder id=23 name='Folder in first folder' parent_id=20
+2026-06-17 16:48:42,764 - INFO - app.routers.folders_router - Browsed folder parent_id=20, subfolders=1 files=1
+2026-06-17 16:48:45,527 - INFO - app.routers.folders_router - Browsed folder parent_id=None, subfolders=3 files=2
+2026-06-17 16:48:47,454 - INFO - app.routers.folders_router - Browsed folder parent_id=21, subfolders=0 files=0
+2026-06-17 16:48:56,979 - INFO - app.routers.folders_router - Created folder id=24 name='Folder in second folder' parent_id=21
+2026-06-17 16:48:56,987 - INFO - app.routers.folders_router - Browsed folder parent_id=21, subfolders=1 files=0
+2026-06-17 16:49:03,502 - INFO - app.routers.files_router - Created file id=14 name='File in second folder' folder_id=21
+2026-06-17 16:49:03,509 - INFO - app.routers.folders_router - Browsed folder parent_id=21, subfolders=1 files=1
+2026-06-17 16:49:04,801 - INFO - app.routers.folders_router - Browsed folder parent_id=None, subfolders=3 files=2
+2026-06-17 16:49:06,839 - INFO - app.routers.folders_router - Browsed folder parent_id=22, subfolders=0 files=0
+2026-06-17 16:49:12,236 - INFO - app.routers.files_router - Created file id=15 name='File in third folder' folder_id=22
+2026-06-17 16:49:12,243 - INFO - app.routers.folders_router - Browsed folder parent_id=22, subfolders=0 files=1
+2026-06-17 16:49:13,311 - INFO - app.routers.folders_router - Browsed folder parent_id=None, subfolders=3 files=2
+2026-06-17 16:56:35,596 - INFO - app.routers.folders_router - Browsed folder parent_id=20, subfolders=1 files=1
+2026-06-17 16:57:22,357 - INFO - app.routers.files_router - Listed all files, count=5
+2026-06-17 16:59:34,253 - INFO - app.main - Shutting down File Explorer API
+2026-06-17 16:59:36,841 - INFO - app.main - Starting up File Explorer API
+2026-06-17 16:59:39,048 - INFO - app.main - Shutting down File Explorer API
+2026-06-17 16:59:39,768 - INFO - app.main - Starting up File Explorer API
+2026-06-17 16:59:40,568 - INFO - app.main - Starting up File Explorer API
+2026-06-17 17:00:38,307 - INFO - app.routers.folders_router - Browsed folder parent_id=None, subfolders=3 files=2
+2026-06-17 17:09:35,370 - INFO - app.main - Shutting down File Explorer API
+2026-06-17 17:09:36,045 - INFO - app.main - Starting up File Explorer API
+2026-06-17 17:09:41,558 - INFO - app.main - Shutting down File Explorer API
+2026-06-17 17:09:42,269 - INFO - app.main - Starting up File Explorer API
+2026-06-17 17:09:44,676 - INFO - app.main - Shutting down File Explorer API
+2026-06-17 17:09:45,329 - INFO - app.main - Starting up File Explorer API
+2026-06-17 17:09:47,434 - INFO - app.main - Shutting down File Explorer API
+2026-06-17 17:09:48,107 - INFO - app.main - Starting up File Explorer API
+2026-06-17 17:09:50,214 - INFO - app.main - Shutting down File Explorer API
+2026-06-17 17:09:50,898 - INFO - app.main - Starting up File Explorer API
+2026-06-17 17:09:51,901 - INFO - app.main - Shutting down File Explorer API
+2026-06-17 17:09:52,561 - INFO - app.main - Starting up File Explorer API
+2026-06-17 17:09:57,673 - INFO - app.main - Shutting down File Explorer API
+2026-06-17 17:09:58,320 - INFO - app.main - Starting up File Explorer API
+2026-06-17 17:10:05,637 - INFO - app.main - Shutting down File Explorer API
+2026-06-17 17:11:11,595 - INFO - app.main - Starting up File Explorer API
