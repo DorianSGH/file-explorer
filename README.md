@@ -113,7 +113,7 @@ Tests use an in-memory SQLite database and do not require a running Postgres ins
 
 ```bash
 docker compose exec backend pytest tests/ -v
-
+```
 
 ## API
 
