@@ -112,14 +112,8 @@ Note: `--reload` is disabled in debug mode since it conflicts with the debugger.
 Tests use an in-memory SQLite database and do not require a running Postgres instance.
 
 ```bash
-# Inside Docker (recommended)
 docker compose exec backend pytest tests/ -v
 
-# Locally
-cd backend
-pip install -r requirements.txt
-pytest tests/ -v
-```
 
 ## API
 
