@@ -85,25 +85,6 @@ A web-based file system explorer supporting folders, subfolders, and files — w
 
 To stop: `docker compose down`. Add `-v` to also clear the database volume.
 
-## Running without Docker
-
-**Backend:**
-```bash
-cd backend
-python -m venv venv
-source venv/bin/activate
-pip install -r requirements.txt
-export DATABASE_URL=postgresql://fileexplorer:fileexplorer@localhost:5432/fileexplorer
-alembic upgrade head
-uvicorn app.main:app --reload
-```
-
-**Frontend:**
-```bash
-cd frontend
-npm install
-npm run dev
-```
 
 ## Debugging (VSCode)
 
