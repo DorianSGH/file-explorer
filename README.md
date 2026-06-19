@@ -1,159 +1,180 @@
 # File Explorer
 
-A browser-based file system (folders, subfolders, and files) — built
-with FastAPI, React, and PostgreSQL, running in Docker.
+A web-based file system explorer supporting folders, subfolders, and files — with search and autocomplete. Built with FastAPI, React, and PostgreSQL, containerised with Docker.
 
 ## Stack
 
-- **Backend:** FastAPI + SQLAlchemy + Alembic
+- **Backend:** FastAPI, SQLAlchemy, Alembic
 - **Frontend:** React (Vite)
 - **Database:** PostgreSQL
-- **Infrastructure:** Docker Compose (with hot-reload for dev)
-- **Dev tools:** pgAdmin at http://localhost:5050
+- **Infrastructure:** Docker Compose
 
 ## Project structure
 
 ```
 .
 ├── docker-compose.yml
+├── .env.example
 ├── backend/
 │   ├── Dockerfile
 │   ├── alembic.ini
 │   ├── requirements.txt
-│   ├── servers.json               # pgAdmin auto-registration
+│   ├── servers.json              # pgAdmin auto-registration
 │   ├── alembic/
-│   │   ├── env.py
 │   │   └── versions/
 │   │       └── 0001_create_folders_and_files.py
 │   ├── app/
-│   │   ├── main.py                # FastAPI app, CORS, lifespan, routers
-│   │   ├── config.py              # Pydantic settings (DATABASE_URL etc.)
-│   │   ├── models.py              # Folder and File ORM models
-│   │   ├── schemas.py             # Pydantic request/response schemas
-│   │   ├── crud.py                # Database query functions
-│   │   ├── database.py            # SQLAlchemy engine / session / get_db
-|   |   ├──repositories/
-|   |   |   ├── files_repo.py      # create / delete / search files
-|   |   |   ├── folders_repo.py    # create / delete folders
+│   │   ├── main.py               # App entry point, CORS, lifespan
+│   │   ├── config.py             # Settings (DATABASE_URL)
+│   │   ├── database.py           # SQLAlchemy engine and session
+│   │   ├── models.py             # Folder and File ORM models
+│   │   ├── schemas.py            # Pydantic request/response schemas
+│   │   ├── logger.py             # Logging configuration
+│   │   ├── repositories/
+│   │   │   ├── files_repo.py     # File database operations and search
+│   │   │   └── folders_repo.py   # Folder database operations
 │   │   └── routers/
-│   │       ├── folders.py         # browse / create / delete folders
-│   │       ├── files.py           # create / delete files
-│   │       └── search.py          # exact search + autocomplete
+│   │       ├── files_router.py   # File endpoints
+│   │       ├── folders_router.py # Folder endpoints
+│   │       └── search_router.py  # Search and autocomplete endpoints
 │   └── tests/
-│       ├── conftest.py            # test DB, client fixture
-│       ├── test_health.py
+│       ├── conftest.py           # Test client and database fixtures
 │       ├── test_files.py
 │       └── test_folders.py
-└── frontend/
-    ├── Dockerfile
-    ├── package.json
-    └── src/
-        ├── main.jsx
-        ├── App.jsx
-        ├── api.js                 # backend API client
-        └── components/
-            ├── FileExplorer.jsx
-            ├── Breadcrumbs.jsx
-            ├── CreateItemForm.jsx
-            └── SearchBar.jsx
+├── frontend/
+│   ├── Dockerfile
+│   ├── package.json
+│   ├── vite.config.js
+│   └── src/
+│       ├── api.js                # API client
+│       ├── App.jsx
+│       ├── main.jsx
+│       ├── styles.css
+│       └── components/
+│           ├── Breadcrumbs.jsx
+│           ├── CreateItemForm.jsx
+│           ├── ErrorBoundary.jsx
+│           ├── FileExplorer.jsx  # Main component, state management
+│           └── SearchBar.jsx
+└── logs/                         # Daily rotating log files
 ```
 
 ## Running the application
 
-1. Copy the environment template:
-
+1. Copy the environment file:
    ```bash
    cp .env.example .env
    ```
 
-2. Build and start everything:
-
+2. Build and start all services:
    ```bash
    docker compose up --build
    ```
+   The backend automatically runs `alembic upgrade head` on startup, so the database schema is always up to date.
 
-   On startup the backend container automatically runs
-   `alembic upgrade head` before launching the server, so the database
-   schema is always in sync.
+3. Services:
 
-3. Once running:
+   | Service     | URL                        |
+   |-------------|----------------------------|
+   | Frontend    | http://localhost:5173       |
+   | Backend API | http://localhost:8000       |
+   | Swagger UI  | http://localhost:8000/docs  |
+   | pgAdmin     | http://localhost:5050       |
 
-   | Service        | URL                           |
-   | -------------- | ----------------------------- |
-   | Frontend       | http://localhost:5173          |
-   | Backend API    | http://localhost:8000          |
-   | Swagger UI     | http://localhost:8000/docs     |
-   | pgAdmin        | http://localhost:5050          |
+   In pgAdmin, the database is pre-registered under **Servers → File Explorer DB**.
 
-   In pgAdmin, expand **Servers → File Explorer DB → Databases →
-   fileexplorer → Schemas → Tables** to browse the data.
+To stop: `docker compose down`. Add `-v` to also clear the database volume.
 
-To stop: `docker compose down` (add `-v` to also drop the database
-volume and start fresh).
+## Running without Docker
 
-## Running without Docker (optional)
-
-### Backend
-
+**Backend:**
 ```bash
 cd backend
 python -m venv venv
-source venv/bin/activate       # venv\Scripts\activate on Windows
+source venv/bin/activate
 pip install -r requirements.txt
 export DATABASE_URL=postgresql://fileexplorer:fileexplorer@localhost:5432/fileexplorer
 alembic upgrade head
 uvicorn app.main:app --reload
 ```
 
-### Frontend
-
+**Frontend:**
 ```bash
 cd frontend
 npm install
 npm run dev
 ```
 
-## Database migrations (Alembic)
+## Debugging (VSCode)
 
-Generate a new migration after changing a model:
+A VSCode debug configuration is included in `.vscode/launch.json`.
 
+To debug the backend:
+
+1. Start the backend in debug mode:
+   ```bash
+   # Linux/macOS
+   DEBUG_MODE=true docker compose up --build
+
+   # Windows (PowerShell)
+   $env:DEBUG_MODE="true"; docker compose up --build
+   ```
+
+2. In VSCode, open the Run and Debug panel (Ctrl+Shift+D), select **"Python: Attach to Backend (Docker)"** and click the play button.
+
+3. Set breakpoints in any `.py` file under `backend/` — execution will pause when they are hit.
+
+Note: `--reload` is disabled in debug mode since it conflicts with the debugger. To return to normal development with hot-reload, restart without `DEBUG_MODE`.
+
+## Running tests
+
+Tests use an in-memory SQLite database and do not require a running Postgres instance.
+
+```bash
+# Inside Docker (recommended)
+docker compose exec backend pytest tests/ -v
+
+# Locally
+cd backend
+pip install -r requirements.txt
+pytest tests/ -v
+```
+
+## API
+
+| Method | Path                         | Description                                    |
+|--------|------------------------------|------------------------------------------------|
+| GET    | `/folders/browse?parent_id=` | List contents of a folder (subfolders + files) |
+| GET    | `/folders`                   | List all folders                               |
+| GET    | `/folders/{id}`              | Get a folder by ID                             |
+| POST   | `/folders`                   | Create a folder                                |
+| DELETE | `/folders/{id}`              | Delete a folder and all its contents           |
+| GET    | `/files`                     | List all files                                 |
+| GET    | `/files/{id}`                | Get a file by ID                               |
+| POST   | `/files`                     | Create a file                                  |
+| DELETE | `/files/{id}`                | Delete a file                                  |
+| GET    | `/search?q=&folder_id=`      | Exact name search                              |
+| GET    | `/search/autocomplete?q=`    | Top 10 files starting with query               |
+
+Full interactive documentation is available at `/docs` while the backend is running.
+
+## Database migrations
+
+Generate a migration after changing a model:
 ```bash
 docker compose exec backend alembic revision --autogenerate -m "describe the change"
 ```
 
-Apply migrations manually (also runs automatically on startup):
-
+Apply migrations:
 ```bash
 docker compose exec backend alembic upgrade head
 ```
 
 Roll back the last migration:
-
 ```bash
 docker compose exec backend alembic downgrade -1
 ```
 
-## API
+## Logs
 
-| Method | Path                          | Description                       |
-| ------ | ----------------------------- | --------------------------------- |
-| GET    | `/folders?parent_id=`         | Browse a folder (subfolders + files) |
-| POST   | `/folders`                    | Create a folder                   |
-| DELETE | `/folders/{id}`               | Delete a folder (cascades)        |
-| POST   | `/files`                      | Create a file                     |
-| DELETE | `/files/{id}`                 | Delete a file                     |
-| GET    | `/search?q=&folder_id=`       | Exact-name search                 |
-| GET    | `/search/autocomplete?q=`     | Top-10 "starts with" suggestions  |
-
-Full interactive docs at http://localhost:8000/docs while the backend
-is running.
-
-## Features
-
-- Create folders and subfolders
-- Create files within folders
-- Browse a folder's contents (subfolders + files)
-- Exact-name search (within a folder / globally)
-- "Starts with" autocomplete (top 10 results)
-- Delete folders (cascades to all contents)
-- Delete files
+Application logs are written to both stdout and daily log files under `logs/` in the project root. Log files are named by date (e.g. `2024-11-01.log`) and kept for 30 days.
