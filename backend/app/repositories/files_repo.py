@@ -95,6 +95,7 @@ def search_exact(
     db: Session,
     name: str,
     folder_id: int | None = None,
+    limit: int = 10,
 ) -> list[models.File]:
     """
     Return files whose name matches `name` exactly (case-sensitive).
@@ -109,7 +110,7 @@ def search_exact(
     query = db.query(models.File).filter(models.File.name.ilike(f"{name}%"))
     if folder_id is not None:
         query = query.filter(models.File.folder_id == folder_id)
-    return query.limit(10).all()
+    return query.limit(limit).all()
 
 
 def autocomplete(

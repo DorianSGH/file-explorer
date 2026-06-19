@@ -17,9 +17,10 @@ router = APIRouter(prefix="/search", tags=["search"])
 def search_exact(
     q: str,
     folder_id: int | None = None,
+    limit: int = 10,
     db: Session = Depends(get_db),
 ):
-    return files_repo.search_exact(db, name=q, folder_id=folder_id)
+    return files_repo.search_exact(db, name=q, folder_id=folder_id, limit=limit)
 
 
 @router.get("/autocomplete", response_model=list[schemas.FileOut])
